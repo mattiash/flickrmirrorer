@@ -44,6 +44,7 @@ import six
 import sys
 import urllib
 import webbrowser
+import socket
 
 try:
     # We try importing simplejson first because it's faster than json
@@ -122,6 +123,9 @@ class FlickrMirrorer(object):
     photostream_dir = None
     tmp_filename = None
     flickr = None
+
+    # https://bitbucket.org/sybren/flickrapi/issues/27/provide-timeout-for-flickr-rest-calls
+    socket.setdefaulttimeout(30)
 
     def __init__(self, dest_dir, verbosity, print_statistics, include_views):
         self.dest_dir = dest_dir

@@ -1,3 +1,5 @@
 #!/bin/sh
 
-HOME=/data BROWSER=/bin/echo YTHONIOENCODING=utf_8 PYTHONUNBUFFERED=1 flickrmirrorer /data/
+cd /data
+HOME=/data BROWSER=/bin/echo PYTHONIOENCODING=utf_8 PYTHONUNBUFFERED=1 flickrmirrorer.jenkins /data/
+echo "Done"

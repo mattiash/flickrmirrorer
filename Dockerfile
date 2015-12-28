@@ -7,8 +7,8 @@ WORKDIR /tmp
 ADD https://pypi.python.org/packages/source/f/flickrapi/flickrapi-$FLICKRAPI_VERSION.tar.gz /tmp/
 RUN tar xzf flickrapi-$FLICKRAPI_VERSION.tar.gz && cd flickrapi-$FLICKRAPI_VERSION && python setup.py install
 
-ADD ./flickrmirrorer /usr/local/bin/
-ADD ./docker-run-flickrmirrorer /usr/local/bin/
+ADD ./flickrmirrorer /usr/lib/python2.7/dist-packages/flickrmirrorer.py
+ADD ./flickrmirrorer.jenkins ./docker-run-flickrmirrorer /usr/local/bin/
 
 RUN mkdir /data
 VOLUME /data

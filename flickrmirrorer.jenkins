@@ -4,7 +4,7 @@ import sys
 import flickrmirrorer
 
 try:
-    mirrorer = flickrmirrorer.FlickrMirrorer(sys.argv[1], 1, True, False )
+    mirrorer = flickrmirrorer.FlickrMirrorer(sys.argv[1], 2, True, False )
     mirrorer.run()
     f1=open('./statistics.csv', 'w+')
     print >>f1, "new,modified,deleted"
